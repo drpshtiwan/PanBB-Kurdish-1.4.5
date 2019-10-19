@@ -1,0 +1,187 @@
+﻿.besteri-info {
+	color: #333333;
+	width: 300px;
+	float: left;
+}
+.besteri-info a {
+	color: #333333 !important;
+	text-decoration: none;
+	border-bottom-style: dotted;
+	border-bottom-width: 1px;
+	border-bottom-color: #336699;
+}
+#brd-title {
+	background-position: right center;
+	padding-bottom: 0;
+	background-image: url('logo_new_09.png');
+	background-repeat: no-repeat;
+	height: 100px;
+}
+.hn{
+font-size:10pt !important;
+}
+.submit{
+font-size:10pt;
+}
+.nuser{
+display:inline !important;
+font-size:8pt;
+}
+select {
+	font-family: Tahoma, Arial,  "DejaVu Sans", serif;
+	font-size: 10pt;
+}
+.engtxt {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+	text-align: left;
+	direction: ltr;
+	float: left;
+	padding-left: 5px;
+}
+
+.serderrtxt {
+	border: 0px solid #00529b;
+	color: #00529b;
+	font-weight: bold;
+	text-align: center;
+	padding: 3px;
+	margin: 3px;
+}
+.hellwasrawtxt {
+	border: 0px solid #00529b;
+	color: #4f8a10;
+	font-weight: bold;
+	text-align: center;
+	padding: 3px;
+	margin: 3px;
+}
+
+.yasatxt {
+	border: 0px solid #00529b;
+	color: #d6010e;
+	font-weight: bold;
+	text-align: center;
+	padding: 3px;
+	margin: 3px;
+}
+.amraz {
+	float: left;
+	width: 80px;
+	vertical-align: top;
+	margin-bottom: 40px;
+	text-align: left;
+	direction: ltr;
+}
+.main-head {
+	background-image: url('ctr3-bg.png') !important;background-repeat: repeat-x !important;
+}
+.amraz img {
+	direction: ltr;
+	margin-right: 5px;
+}
+.formi-gerran {
+	float: left;
+}
+blockquote {
+	padding: 3px !important;
+}
+.besteri-info img {
+	vertical-align: middle;
+}
+.besteri-info a:hover {
+	color: #333333 !important;
+	text-decoration: none;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #336699;
+}
+.besteri-jerpe {
+	border-width: 1px 0px 0px 0px;
+	text-align: right;
+	color: #333333;
+	padding-right: 60px;
+	margin-top: 8px;
+	margin-bottom: 30px;
+	padding-top: 10px;
+	border-top-style: solid;
+	font-size: 9pt;
+	display: block;
+	border-top-color: #CCCCCC;
+}
+.besteri-jerpe a {
+	color: #333333 !important;
+	margin-left: 15px;
+	margin-right: 10px;
+	margin-top: 30px;
+}
+.besteri-jerpe a:hover {
+	color: #003366;
+	border-bottom-style: dotted;
+	border-bottom-width: 1px;
+	border-bottom-color: #336699 !important;
+}
+.besteri-jerpe h1 {
+	margin: 0px;
+	padding: 0px;
+	color: #333333;
+}
+.webchinupload {
+	margin-right: auto !important;
+	margin-left: auto !important;
+	text-align: center;
+	padding-right: 230px !important;
+}
+.helle {
+	text-decoration: line-through;
+	color: #666666;
+}
+.qr{
+	text-align: center;
+	margin-right: auto;
+	margin-left: auto;
+	width: 100px;
+}
+.agadari{
+border: 1px solid;
+border-color: #f4ebce;
+padding: 5px !important;
+color:#335577;
+background-color:#feffe6;
+}
+.noscroll {
+    overflow: hidden;
+}
+
+.hiddendiv {
+    display: none;
+    white-space: pre-wrap;
+    width: 600px;
+    min-height: 300px;
+    overflow: hidden;
+    word-wrap: break-word;
+}​
+.brd .entry-content .codebox code {
+	font-family: Tahoma;
+	}
+.item-nav a{
+	border-radius: 3px;
+	padding-right: 3px;
+	padding-left: 3px;
+	margin-top:2px;
+	border: 1px solid #D5DCF4;
+	color: #105AB5;
+}
+.besteri-jerpe li {
+	color: #333333;
+	margin-left: 5px;
+	display: list-item;
+	list-style-type: disc;
+	list-style-position: inside;
+	visibility: visible;
+	float: right;
+}
+#brd-announcement{
+background-color:#fcf8e3;
+border: 1px solid #fbeed5;
+}
