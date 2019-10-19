@@ -2092,7 +2092,7 @@ if ($forum_page['has_required']): ?>
 					</div>
 				</div>
 <?php ($hook = get_hook('pf_change_details_identity_pre_linkedin')) ? eval($hook) : null; ?>
-				<div class="sf-set set<?php echo ++$forum_page['item_count'] ?>">
+				<div class="sf-set set<?php echo ++$forum_page['item_count'] ?>" style="display:none;">
 					<div class="sf-box text">
 						<label for="fld<?php echo ++$forum_page['fld_count'] ?>"><span><?php echo $lang_profile['LinkedIn'] ?></span></label><br />
 						<span class="fld-input"><input type="url" id="fld<?php echo $forum_page['fld_count'] ?>" name="form[linkedin]" value="<?php echo(isset($form['linkedin']) ? forum_htmlencode($form['linkedin']) : forum_htmlencode($user['linkedin'])) ?>" size="35" maxlength="80" /></span>
@@ -2102,7 +2102,7 @@ if ($forum_page['has_required']): ?>
 			<fieldset class="frm-group group<?php echo ++$forum_page['group_count'] ?>">
 				<legend class="group-legend"><strong><?php echo $lang_profile['Contact messengers legend'] ?></strong></legend>
 <?php ($hook = get_hook('pf_change_details_identity_pre_jabber')) ? eval($hook) : null; ?>
-				<div class="sf-set set<?php echo ++$forum_page['item_count'] ?>">
+				<div class="sf-set set<?php echo ++$forum_page['item_count'] ?>" style="display:none;">
 					<div class="sf-box text">
 						<label for="fld<?php echo ++$forum_page['fld_count'] ?>"><span><?php echo $lang_profile['Jabber'] ?></span></label><br />
 						<span class="fld-input"><input id="fld<?php echo $forum_page['fld_count'] ?>" type="email" name="form[jabber]" value="<?php echo(isset($form['jabber']) ? forum_htmlencode($form['jabber']) : forum_htmlencode($user['jabber'])) ?>" size="35" maxlength="80" /></span>
@@ -2116,7 +2116,7 @@ if ($forum_page['has_required']): ?>
 					</div>
 				</div>
 <?php ($hook = get_hook('pf_change_details_identity_pre_msn')) ? eval($hook) : null; ?>
-				<div class="sf-set set<?php echo ++$forum_page['item_count'] ?>">
+				<div class="sf-set set<?php echo ++$forum_page['item_count'] ?>" style="display:none;">
 					<div class="sf-box text">
 						<label for="fld<?php echo ++$forum_page['fld_count'] ?>"><span><?php echo $lang_profile['MSN'] ?></span></label><br />
 						<span class="fld-input"><input id="fld<?php echo $forum_page['fld_count'] ?>" type="text" name="form[msn]" value="<?php echo(isset($form['msn']) ? forum_htmlencode($form['msn']) : forum_htmlencode($user['msn'])) ?>" size="35" maxlength="80" /></span>
@@ -2130,14 +2130,14 @@ if ($forum_page['has_required']): ?>
 					</div>
 				</div>
 <?php ($hook = get_hook('pf_change_details_identity_pre_aim')) ? eval($hook) : null; ?>
-				<div class="sf-set set<?php echo ++$forum_page['item_count'] ?>">
+				<div class="sf-set set<?php echo ++$forum_page['item_count'] ?>" style="display:none;">
 					<div class="sf-box text">
 						<label for="fld<?php echo ++$forum_page['fld_count'] ?>"><span><?php echo $lang_profile['AOL IM'] ?></span></label><br />
 						<span class="fld-input"><input id="fld<?php echo $forum_page['fld_count'] ?>" type="text" name="form[aim]" value="<?php echo(isset($form['aim']) ? forum_htmlencode($form['aim']) : forum_htmlencode($user['aim'])) ?>" size="20" maxlength="30" /></span>
 					</div>
 				</div>
 <?php ($hook = get_hook('pf_change_details_identity_pre_yahoo')) ? eval($hook) : null; ?>
-				<div class="sf-set set<?php echo ++$forum_page['item_count'] ?>">
+				<div class="sf-set set<?php echo ++$forum_page['item_count'] ?>" style="display:none;">
 					<div class="sf-box text">
 						<label for="fld<?php echo ++$forum_page['fld_count'] ?>"><span><?php echo $lang_profile['Yahoo'] ?></span></label><br />
 						<span class="fld-input"><input id="fld<?php echo $forum_page['fld_count'] ?>" type="text" name="form[yahoo]" value="<?php echo(isset($form['yahoo']) ? forum_htmlencode($form['yahoo']) : forum_htmlencode($user['yahoo'])) ?>" size="20" maxlength="30" /></span>

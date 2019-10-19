@@ -983,15 +983,15 @@ else if ($section == 'features')
 	$forum_page['group_count'] = $forum_page['item_count'] = 0;
 
 ?>
-			<div class="content-head">
+			<div class="content-head" style="display:none">
 				<h2 class="hn"><span><?php echo $lang_admin_settings['Features update'] ?></span></h2>
 			</div>
 <?php if (function_exists('curl_init') || function_exists('fsockopen') || in_array(strtolower(@ini_get('allow_url_fopen')), array('on', 'true', '1'))): ?>
-			<div class="ct-box">
+			<div class="ct-box" style="display:none">
 				<p><?php echo $lang_admin_settings['Features update info'] ?></p>
 			</div>
 <?php ($hook = get_hook('aop_features_pre_updates_fieldset')) ? eval($hook) : null; ?>
-			<fieldset class="frm-group group<?php echo ++$forum_page['group_count'] ?>">
+			<fieldset class="frm-group group<?php echo ++$forum_page['group_count'] ?>" style="display:none">
 				<legend class="group-legend"><strong><?php echo $lang_admin_settings['Features update legend'] ?></strong></legend>
 <?php ($hook = get_hook('aop_features_pre_updates_checkbox')) ? eval($hook) : null; ?>
 				<div class="sf-set set<?php echo ++$forum_page['item_count'] ?>">

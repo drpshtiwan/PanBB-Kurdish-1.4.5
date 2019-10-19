@@ -10,8 +10,8 @@ $forum_stats = array (
     'username' => 'admin',
   ),
   'total_topics' => '1',
-  'total_posts' => '1',
-  'cached' => 1571487080,
+  'total_posts' => '2',
+  'cached' => 1571487748,
 );
 
 ?>

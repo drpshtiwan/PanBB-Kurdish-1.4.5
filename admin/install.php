@@ -141,7 +141,7 @@ if (!isset($_POST['form_sent']))
 <head>
 	<meta charset="utf-8" />
 	<title>PunBB Installation</title>
-	<link rel="stylesheet" type="text/css" href="<?php echo FORUM_ROOT ?>style/Oxygen/Oxygen.min.css" />
+	<link rel="stylesheet" type="text/css" href="<?php echo FORUM_ROOT ?>style/print.css" />
 </head>
 <body>
 <div id="brd-install" class="brd-page">
@@ -278,7 +278,7 @@ if (!isset($_POST['form_sent']))
 			<div class="sf-set set1 prepend-top">
 				<div class="sf-box text required">
 					<label for="admin_username"><span><?php echo $lang_install['Admin username'] ?></span> <small><?php echo $lang_install['Username help'] ?></small></label><br />
-					<span class="fld-input"><input id="admin_username" type="text" data-suggest-role="username" name="req_username" size="35" maxlength="25" required /></span>
+					<span class="fld-input"><input id="admin_username" type="text" name="req_username" size="35" maxlength="25" required /></span>
 				</div>
 			</div>
 			<div class="sf-set set2">
@@ -422,8 +422,8 @@ else
 		error($lang_install['Invalid email']);
 
 	// Make sure board title and description aren't left blank
-	$board_title = 'My PunBB forum';
-	$board_descrip = 'Unfortunately no one can be told what PunBB is — you have to see it for yourself';
+	$board_title = 'My PanBB forum';
+	$board_descrip = 'Unfortunately no one can be told what PanBB is — you have to see it for yourself';
 
 	if (utf8_strlen($base_url) == 0)
 		error($lang_install['Missing base url']);
@@ -1374,20 +1374,22 @@ else
 				'datatype'		=> 'VARCHAR(100)',
 				'allow_null'	=> true
 			),
-			'linkedin'			=> array(
+			'skype'			=> array(
 				'datatype'		=> 'VARCHAR(100)',
 				'allow_null'	=> true
 			),
-			'skype'			=> array(
+			'icq'				=> array(
+				'datatype'		=> 'VARCHAR(12)',
+				'allow_null'	=> true
+			),
+			
+			/*For Deleting in Next Version*/
+			'linkedin'			=> array(
 				'datatype'		=> 'VARCHAR(100)',
 				'allow_null'	=> true
 			),
 			'jabber'			=> array(
 				'datatype'		=> 'VARCHAR(80)',
-				'allow_null'	=> true
-			),
-			'icq'				=> array(
-				'datatype'		=> 'VARCHAR(12)',
 				'allow_null'	=> true
 			),
 			'msn'				=> array(
@@ -1402,6 +1404,8 @@ else
 				'datatype'		=> 'VARCHAR(30)',
 				'allow_null'	=> true
 			),
+			
+			
 			'location'			=> array(
 				'datatype'		=> 'VARCHAR(30)',
 				'allow_null'	=> true
@@ -1491,7 +1495,7 @@ else
 			'style'				=> array(
 				'datatype'		=> 'VARCHAR(25)',
 				'allow_null'	=> false,
-				'default'		=> '\'Oxygen\''
+				'default'		=> '\'Default\''
 			),
 			'num_posts'			=> array(
 				'datatype'		=> 'INT(10) UNSIGNED',
@@ -1666,9 +1670,9 @@ else
 		'o_board_desc'				=> "'".$forum_db->escape($board_descrip)."'",
 		'o_default_timezone'		=> "'0'",
 		'o_time_format'				=> "'H:i:s'",
-		'o_date_format'				=> "'Y-m-d'",
-		'o_check_for_updates'		=> "'$check_for_updates'",
-		'o_check_for_versions'		=> "'$check_for_updates'",
+		'o_date_format'				=> "'d-m-Y'",
+		'o_check_for_updates'		=> "'0'",
+		'o_check_for_versions'		=> "'0'",
 		'o_timeout_visit'			=> "'5400'",
 		'o_timeout_online'			=> "'300'",
 		'o_redirect_delay'			=> "'0'",
@@ -1680,11 +1684,11 @@ else
 		'o_smilies_sig'				=> "'1'",
 		'o_make_links'				=> "'1'",
 		'o_default_lang'			=> "'".$forum_db->escape($default_lang)."'",
-		'o_default_style'			=> "'Oxygen'",
+		'o_default_style'			=> "'Default'",
 		'o_default_user_group'		=> "'3'",
 		'o_topic_review'			=> "'15'",
 		'o_disp_topics_default'		=> "'30'",
-		'o_disp_posts_default'		=> "'25'",
+		'o_disp_posts_default'		=> "'15'",
 		'o_indent_num_spaces'		=> "'4'",
 		'o_quote_depth'				=> "'3'",
 		'o_quickpost'				=> "'1'",
@@ -1900,6 +1904,7 @@ else
 		}
 	}
 
+		require FORUM_ROOT.'include/xml.php';
 
 ?>
 <!DOCTYPE html>
@@ -1910,7 +1915,7 @@ else
 <head>
 	<meta charset="utf-8" />
 	<title>PunBB Installation</title>
-	<link rel="stylesheet" type="text/css" href="<?php echo FORUM_ROOT ?>style/Oxygen/Oxygen.min.css" />
+	<link rel="stylesheet" type="text/css" href="<?php echo FORUM_ROOT ?>style/print.css" />
 </head>
 <body>
 <div id="brd-install" class="brd-page">

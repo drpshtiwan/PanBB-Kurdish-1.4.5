@@ -33,7 +33,7 @@ class DBLayer
 	);
 
 
-	function DBLayer($db_host, $db_username, $db_password, $db_name, $db_prefix, $p_connect)
+	function __construct($db_host, $db_username, $db_password, $db_name, $db_prefix, $p_connect)
 	{
 		// Prepend $db_name with the path to the forum root directory
 		$db_name = FORUM_ROOT.$db_name;
@@ -505,7 +505,7 @@ class DBLayer
 		return $table;
 	}
 
-
+/*
 	function add_field($table_name, $field_name, $field_type, $allow_null, $default_value = null, $after_field = 0, $no_prefix = false)
 	{
 		if ($this->field_exists($table_name, $field_name, $no_prefix))
@@ -564,7 +564,20 @@ class DBLayer
 		// Drop temp table
 		$this->drop_table($table_name.'_t'.$now, $no_prefix);
 	}
+*/
+// REPLACED ON...
+	function add_field($table_name, $field_name, $field_type, $allow_null, $default_value = null, $after_field = null, $no_prefix = false)
+	{
+		if ($this->field_exists($table_name, $field_name, $no_prefix))
+			return;
 
+		$field_type = preg_replace(array_keys($this->datatype_transformations), array_values($this->datatype_transformations), $field_type);
+
+		if ($default_value !== null && !is_int($default_value) && !is_float($default_value))
+			$default_value = '\''.$this->escape($default_value).'\'';
+
+		$this->query('ALTER TABLE '.($no_prefix ? '' : $this->prefix).$table_name.' ADD COLUMN '.$field_name.' '.$field_type.($allow_null ? ' ' : ' NOT NULL').($default_value !== null ? ' DEFAULT '.$default_value : ' ').($after_field != null ? ' AFTER '.$after_field : '')) or error(__FILE__, __LINE__);
+	}
 
 	function alter_field($table_name, $field_name, $field_type, $allow_null, $default_value = null, $after_field = 0, $no_prefix = false)
 	{

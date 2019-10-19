@@ -3,7 +3,7 @@
 define('FORUM_CONFIG_LOADED', 1);
 
 $forum_config = array (
-  'o_cur_version' => '1.4.4',
+  'o_cur_version' => '1.4.5',
   'o_database_revision' => '5',
   'o_board_title' => 'My PunBB forum',
   'o_board_desc' => 'Unfortunately no one can be told what PunBB is — you have to see it for yourself',
@@ -22,7 +22,7 @@ $forum_config = array (
   'o_smilies' => '1',
   'o_smilies_sig' => '1',
   'o_make_links' => '1',
-  'o_default_lang' => 'English',
+  'o_default_lang' => 'Kurdish',
   'o_default_style' => 'Oxygen',
   'o_default_user_group' => '3',
   'o_topic_review' => '15',

@@ -51,20 +51,5 @@
 </div>
 </div>
 <!-- forum_javascript -->
-<script>
-    var main_menu = responsiveNav("#brd-navlinks", {
-        label: "<!-- forum_board_title -->"
-    });
-    if(document.getElementsByClassName('admin-menu').length){
-        var admin_menu = responsiveNav(".admin-menu", {
-            label: "<!-- forum_lang_menu_admin -->"
-        });
-    }
-    if(document.getElementsByClassName('main-menu').length){
-        var profile_menu = responsiveNav(".main-menu", {
-            label: "<!-- forum_lang_menu_profile -->"
-        });
-    }
-</script>
 </body>
 </html>

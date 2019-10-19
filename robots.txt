@@ -1,4 +1,10 @@
 User-agent: *
 Disallow: /admin/
 Disallow: /cache/
-Disallow: /search.php
+Disallow: /profile*
+Disallow: /search*
+Disallow: /user*
+Disallow: /?*
+
+#Set link on your Sitremap file. Use Extension - Pan SEO.
+#Sitemap: https://punbb.info/sitemap.xml

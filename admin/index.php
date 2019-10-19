@@ -9,7 +9,6 @@
  * @package PunBB
  */
 
-
 if (!defined('FORUM_ROOT'))
 	define('FORUM_ROOT', '../');
 require FORUM_ROOT.'include/common.php';
@@ -70,7 +69,10 @@ if ($forum_user['g_id'] == FORUM_ADMIN)
 // Get the server load averages (if possible)
 if (function_exists('sys_getloadavg') && is_array($load_averages = sys_getloadavg()))
 {
-	array_walk($load_averages, create_function('&$v', '$v = forum_number_format(round($v, 2), 2);'));
+	array_walk($load_averages,
+	function () use (&$v) {
+		$v = forum_number_format(round($v, 2), 2);
+	});
 	$server_load = $load_averages[0].' '.$load_averages[1].' '.$load_averages[2];
 }
 else if (@/**/is_readable('/proc/loadavg'))
@@ -179,10 +181,10 @@ ob_start();
 				<div class="ct-box">
 					<h3 class="ct-legend hn"><span><?php echo $lang_admin_index['PunBB version'] ?></span></h3>
 					<ul class="data-list">
-						<li><span>PunBB <?php echo $forum_config['o_cur_version'] ?></span></li>
+						<li><span>PanBB <?php echo $forum_config['o_cur_version'] ?></span></li>
 						<li><span><?php echo $lang_admin_index['Copyright message'] ?></span></li>
 <?php if (isset($punbb_updates)): ?>
-						<li><span><?php echo $punbb_updates ?></span></li>
+<!--						<li><span><?php echo $punbb_updates ?></span></li>-->
 <?php endif; ?>
 					</ul>
 				</div>
@@ -192,9 +194,9 @@ ob_start();
 				<div class="ct-box">
 					<h3 class="ct-legend hn"><span><?php echo $lang_admin_index['PunBB community'] ?></span></h3>
 					<ul class="data-list">
-						<li><span><?php echo $lang_admin_index['Forums'] ?>: <a href="http://punbb.informer.com/forums/">Forums</a></span></li>
-						<li><span><?php echo $lang_admin_index['Twitter'] ?>: <a href="https://twitter.com/punbb_forum">@punbb_forum</a></span></li>
-						<li><span><?php echo $lang_admin_index['Development'] ?>: <a href="https://github.com/punbb/punbb">https://github.com/punbb</a></span></li>
+						<li><span><?php echo $lang_admin_index['Forums'] ?>: <a href="https://punbb.info/" target="blank">Forums</a></span></li>
+						<li><span><?php echo $lang_admin_index['Twitter'] ?>: <a href="https://punbb.info/misc.php?action=downloads" target="blank">Download extensions</a></span></li>
+						<li><span><?php echo $lang_admin_index['Development'] ?>: <a href="https://punbb.info/new-reply733.html" target="blank">Ask a qwestion</a></span></li>
 					</ul>
 				</div>
 			</div>

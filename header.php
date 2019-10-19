@@ -24,21 +24,21 @@ header('Content-type: text/html; charset=utf-8');
 // Load the main template
 if (substr(FORUM_PAGE, 0, 5) == 'admin')
 {
-	if ($forum_user['style'] != 'Oxygen' && file_exists(FORUM_ROOT.'style/'.$forum_user['style'].'/admin.tpl'))
+	if (file_exists(FORUM_ROOT.'style/'.$forum_user['style'].'/admin.tpl'))
 		$tpl_path = FORUM_ROOT.'style/'.$forum_user['style'].'/admin.tpl';
 	else
 		$tpl_path = FORUM_ROOT.'include/template/admin.tpl';
 }
 else if (FORUM_PAGE == 'help')
 {
-	if ($forum_user['style'] != 'Oxygen' && file_exists(FORUM_ROOT.'style/'.$forum_user['style'].'/help.tpl'))
+	if (file_exists(FORUM_ROOT.'style/'.$forum_user['style'].'/help.tpl'))
 		$tpl_path = FORUM_ROOT.'style/'.$forum_user['style'].'/help.tpl';
 	else
 		$tpl_path = FORUM_ROOT.'include/template/help.tpl';
 }
 else
 {
-	if ($forum_user['style'] != 'Oxygen' && file_exists(FORUM_ROOT.'style/'.$forum_user['style'].'/main.tpl'))
+	if (file_exists(FORUM_ROOT.'style/'.$forum_user['style'].'/main.tpl'))
 		$tpl_path = FORUM_ROOT.'style/'.$forum_user['style'].'/main.tpl';
 	else
 		$tpl_path = FORUM_ROOT.'include/template/main.tpl';
@@ -116,7 +116,10 @@ $forum_head['author'] = '<link rel="author" type="text/html" href="'.forum_link(
 ob_start();
 
 // Include stylesheets
-require FORUM_ROOT.'style/'.$forum_user['style'].'/'.$forum_user['style'].'.php';
+if (file_exists(FORUM_ROOT.'style/'.$forum_user['style'].'/'.$forum_user['style'].'.php'))
+	require FORUM_ROOT.'style/'.$forum_user['style'].'/'.$forum_user['style'].'.php';
+else
+	$forum_loader->add_css($base_url.'/style/print.css', array('type' => 'url', 'group' => FORUM_CSS_GROUP_SYSTEM, 'media' => 'screen'));
 
 $head_temp = forum_trim(ob_get_contents());
 $num_temp = 0;

@@ -19,7 +19,7 @@ if (!defined('FORUM'))
 function is_valid_email($email)
 {
 	$return = ($hook = get_hook('em_fn_is_valid_email_start')) ? eval($hook) : null;
-	if ($return != null)
+	if ($return !== null)
 		return $return;
 
 	if (strlen($email) > 80)
@@ -37,7 +37,7 @@ function is_banned_email($email)
 	global $forum_db, $forum_bans;
 
 	$return = ($hook = get_hook('em_fn_is_banned_email_start')) ? eval($hook) : null;
-	if ($return != null)
+	if ($return !== null)
 		return $return;
 
 	foreach ($forum_bans as $cur_ban)
@@ -117,11 +117,12 @@ function server_parse($socket, $expected_response)
 	while (substr($server_response, 3, 1) != ' ')
 	{
 		if (!($server_response = fgets($socket, 256)))
-			error('Couldn\'t get mail server response codes.<br />Please contact the forum administrator.', __FILE__, __LINE__);
+			error($expected_response.' Couldn\'t get mail server response codes.<br />Please contact the forum administrator.', __FILE__, __LINE__);
 	}
 
-	if (!(substr($server_response, 0, 3) == $expected_response))
-		error('Unable to send e-mail.<br />Please contact the forum administrator with the following error message reported by the SMTP server: "'.$server_response.'"', __FILE__, __LINE__);
+	if (!(substr($server_response, 0, 3) == $expected_response)) {
+        error($expected_response.' Unable to send e-mail.<br />Please contact the forum administrator with the following error message reported by the SMTP server: "'.$server_response.'"', __FILE__, __LINE__);
+        }
 }
 
 
@@ -132,7 +133,6 @@ function server_parse($socket, $expected_response)
 function smtp_mail($to, $subject, $message, $headers = '')
 {
 	global $forum_config;
-
 	$recipients = explode(',', $to);
 
 	// Sanitize the message
@@ -158,7 +158,8 @@ function smtp_mail($to, $subject, $message, $headers = '')
 
 	if ($forum_config['o_smtp_user'] != '' && $forum_config['o_smtp_pass'] != '')
 	{
-		fwrite($socket, 'EHLO '.$smtp_host."\r\n");
+        $_server = $_SERVER['SERVER_NAME'];
+		fwrite($socket, 'EHLO '.$_server."\r\n");
 		server_parse($socket, '250');
 
 		fwrite($socket, 'AUTH LOGIN'."\r\n");
