@@ -1,15 +1,19 @@
-# PunBB
+# PanBB (Kurdish Support)
 
-PunBB is a fast and lightweight PHP-powered discussion board. It is released under the GNU General Public License. Its primary goals are to be faster, smaller and less graphically intensive as compared to other discussion boards. PunBB has fewer features than many other discussion boards, but is generally faster and outputs smaller, semantically correct XHTML-compliant pages.
+PanBB is the newer version of PunBB which is a fast and lightweight PHP-powered discussion board. It is released under the GNU General Public License. Its primary goals are to be faster, smaller and less graphically intensive as compared to other discussion boards. PunBB has fewer features than many other discussion boards, but is generally faster and outputs smaller, semantically correct XHTML-compliant pages.
+
 
 ## Quick install
+ 1. Clone the Repository 
+ ```
+ git clone https://github.com/kardoqadir/PanBB-Kurdish-1.4.5.git panbb
+ ```
  1. [Download the latest revision of PunBB](http://punbb.informer.com/downloads.php). Decompress the PunBB archive to a directory.
- 2. Copy (or upload) all the files contained in this archive into the directory where you want to run your forums. (e.g. /home/user/www/punbb/)
- 3. Run install.php from the forum admin directory (e.g. open http://example.com/punbb/admin/install.php in your browser). Follow the instructions.
+ 3. Run install.php from the forum admin directory on your server (e.g. open http://example.com/punbb/admin/install.php in your browser). Follow the instructions.
 
 ## Requirements
  - A webserver
- - PHP 5
+ - PHP 7 or Higher
  - A database where forum data is to be stored, created in one of: MySQL 4.1.2 or later, PostgreSQL 7.0 or later or SQLite 2
 
 ## Extension installation
@@ -25,6 +29,7 @@ Please report issues on the [Github issue tracker](https://github.com/punbb/punb
 Personal email addresses are not appropriate for bug reports.
 
 ## Links
+ - [Webchin Support](https://www.webchin.org/Meko/viewforum.php?id=37)
  - [Documentation](http://punbb.informer.com/wiki/)
  - [Internationalization](http://punbb.informer.com/wiki/punbb13/language_packs)
  - [Styles](http://punbb.informer.com/wiki/punbb13/syles)
