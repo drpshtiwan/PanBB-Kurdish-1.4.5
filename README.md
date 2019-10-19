@@ -6,10 +6,11 @@ PanBB is the newer version of PunBB which is a fast and lightweight PHP-powered 
 ## Quick install
  1. Clone the Repository 
  ```
- git clone https://github.com/kardoqadir/PanBB-Kurdish-1.4.5.git panbb
+    git clone https://github.com/kardoqadir/PanBB-Kurdish-1.4.5.git panbb
  ```
- 1. [Download the latest revision of PunBB](http://punbb.informer.com/downloads.php). Decompress the PunBB archive to a directory.
- 3. Run install.php from the forum admin directory on your server (e.g. open http://example.com/punbb/admin/install.php in your browser). Follow the instructions.
+ OR [Download From Source](https://github.com/kardoqadir/PanBB-Kurdish-1.4.5/archive/master.zip). Decompress the PunBB archive to a directory.
+ 
+ 2. Run install.php from the forum admin directory on your server (e.g. open http://example.com/punbb/admin/install.php in your browser). Follow the instructions.
 
 ## Requirements
  - A webserver
