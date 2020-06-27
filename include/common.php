@@ -15,21 +15,21 @@ if (!defined('FORUM_ESSENTIALS_LOADED'))
 	require FORUM_ROOT.'include/essentials.php';
 
 // Turn off magic_quotes_runtime
-if (get_magic_quotes_runtime())
-	@ini_set('magic_quotes_runtime', false);
-
+// if (get_magic_quotes_runtime())
+// 	@ini_set('magic_quotes_runtime', false);
+ini_set('magic_quotes_runtime', 0);
 // Strip slashes from GET/POST/COOKIE (if magic_quotes_gpc is enabled)
-if (get_magic_quotes_gpc())
-{
-	function stripslashes_array($array)
-	{
-		return is_array($array) ? array_map('stripslashes_array', $array) : stripslashes($array);
-	}
+// if (get_magic_quotes_gpc())
+// {
+// 	function stripslashes_array($array)
+// 	{
+// 		return is_array($array) ? array_map('stripslashes_array', $array) : stripslashes($array);
+// 	}
 
-	$_GET = stripslashes_array($_GET);
-	$_POST = stripslashes_array($_POST);
-	$_COOKIE = stripslashes_array($_COOKIE);
-}
+// 	$_GET = stripslashes_array($_GET);
+// 	$_POST = stripslashes_array($_POST);
+// 	$_COOKIE = stripslashes_array($_COOKIE);
+// }
 
 // Strip out "bad" UTF-8 characters
 forum_remove_bad_characters();

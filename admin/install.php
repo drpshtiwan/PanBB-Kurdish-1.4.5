@@ -10,7 +10,7 @@
  */
 
 
-define('MIN_PHP_VERSION', '5.0.0');
+define('MIN_PHP_VERSION', '7.0.0');
 define('MIN_MYSQL_VERSION', '4.1.2');
 
 define('FORUM_ROOT', '../');
@@ -65,7 +65,7 @@ function generate_config_file()
 	return $config_body;
 }
 
-$language = isset($_GET['lang']) ? $_GET['lang'] : (isset($_POST['req_language']) ? forum_trim($_POST['req_language']) : 'English');
+$language = isset($_GET['lang']) ? $_GET['lang'] : (isset($_POST['req_language']) ? forum_trim($_POST['req_language']) : 'Kurdish');
 $language = preg_replace('#[\.\\\/]#', '', $language);
 if (!file_exists(FORUM_ROOT.'lang/'.$language.'/install.php'))
 	exit('The language pack you have chosen doesn\'t seem to exist or is corrupt. Please recheck and try again.');
@@ -374,7 +374,8 @@ else
 	//
 	function unescape($str)
 	{
-		return (get_magic_quotes_gpc() == 1) ? stripslashes($str) : $str;
+		return  $str;
+		// return (get_magic_quotes_gpc() == 1) ? stripslashes($str) : $str;
 	}
 
 
@@ -1684,7 +1685,7 @@ else
 		'o_smilies_sig'				=> "'1'",
 		'o_make_links'				=> "'1'",
 		'o_default_lang'			=> "'".$forum_db->escape($default_lang)."'",
-		'o_default_style'			=> "'Default'",
+		'o_default_style'			=> "'Oxygen-rtl'",
 		'o_default_user_group'		=> "'3'",
 		'o_topic_review'			=> "'15'",
 		'o_disp_topics_default'		=> "'30'",
